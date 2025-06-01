@@ -1,0 +1,446 @@
+/* Color Palette Variables for easy reference */
+:root {
+    --floral-white: #fffcf2;
+    --timberwolf: #ccc5b9;
+    --black-olive: #403d39;
+    --eerie-black: #252422;
+    --flame: #eb5e28;
+}
+
+body {
+    font-family: 'Roboto Mono', monospace;
+    background: linear-gradient(135deg, var(--eerie-black) 0%, #2e2d2aff 100%);
+    margin: 0;
+    padding: 0;
+    color: var(--floral-white);
+    min-height: 100vh; /* This is already set correctly on body */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Navbar */
+.navbar {
+    background: var(--black-olive);
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.nav-brand {
+    font-size: 1.5rem;
+    color: var(--flame);
+}
+
+.nav-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li a {
+    color: var(--floral-white);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-links li a:hover,
+.nav-links li a.active {
+    color: var(--flame);
+}
+
+/* Hero Section */
+.hero {
+    flex: 1; /* This is crucial for distributing available space */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 50px 20px;
+    background: linear-gradient(135deg, rgba(37, 36, 34, 0.9), rgba(64, 61, 57, 0.8));
+    min-height: calc(100vh - 80px); /* Adjust this line */
+    /*
+     * Explanation for min-height:
+     * - 100vh makes it full viewport height.
+     * - The `calc()` is used to subtract the fixed height of your navbar.
+     * Assuming navbar height is around 50px + 15px top/bottom padding = 80px.
+     * Adjust '80px' if your navbar's actual height changes.
+     * - If you want the hero to be *exactly* 100vh and let the navbar overlap or push content,
+     * you could just use min-height: 100vh; and adjust body flex accordingly.
+     * However, keeping the navbar visible is usually desired.
+     */
+}
+
+
+.hero h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3rem;
+    color: var(--floral-white);
+    margin: 0 0 20px 0;
+}
+
+.hero-subtitle {
+    font-size: 1.2rem;
+    color: var(--timberwolf);
+    margin-bottom: 30px;
+}
+
+.cta-btn {
+    padding: 12px 24px;
+    background: var(--flame);
+    color: var(--eerie-black);
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 500;
+    transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.cta-btn:hover {
+    background: #cc4d1f;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Main Container (Assuming this wraps the tool page content) */
+.container {
+    flex: 1;
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 20px;
+    text-align: center;
+}
+
+header h1, .result-card h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2rem;
+    color: var(--floral-white);
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    font-size: 1rem;
+    color: var(--timberwolf);
+    margin-bottom: 30px;
+}
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Custom File Upload */
+.custom-file-upload {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 300px;
+    height: 150px;
+    padding: 20px;
+    border: 2px solid var(--black-olive);
+    background: var(--eerie-black);
+    border-radius: 12px;
+    cursor: pointer;
+    transition: border-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.custom-file-upload:hover {
+    border-color: var(--flame);
+    transform: scale(1.03);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.custom-file-upload .icon {
+    margin-bottom: 15px;
+}
+
+.custom-file-upload .icon svg {
+    width: 60px;
+    height: 60px;
+    fill: var(--flame);
+}
+
+.custom-file-upload .text span {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--floral-white);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.custom-file-upload input {
+    display: none;
+}
+
+/* Bouncing Particles Loader */
+.loader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 150px;
+    margin: 20px auto;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(36px); }
+    50% { transform: translateY(46px); }
+}
+
+@keyframes bounce2 {
+    0%, 100% { transform: translateY(46px); }
+    50% { transform: translateY(56px); }
+}
+
+/* Adjust loader colors to match new palette */
+@keyframes umbral {
+    0% { stop-color: #eb5e2833; }
+    50% { stop-color: #eb5e2888; }
+    100% { stop-color: #eb5e2833; }
+}
+
+@keyframes particles {
+    0%, 100% { transform: translateY(16px); }
+    50% { transform: translateY(6px); }
+}
+
+#particles {
+    animation: particles 4s ease-in-out infinite;
+}
+
+#animatedStop {
+    animation: umbral 4s infinite;
+}
+
+#bounce {
+    animation: bounce 4s ease-in-out infinite;
+    transform: translateY(36px);
+}
+
+#bounce2 {
+    animation: bounce2 4s ease-in-out infinite;
+    transform: translateY(46px);
+    animation-delay: 0.5s;
+}
+
+/* Results Section */
+.results-section {
+    padding: 20px 0;
+}
+
+.results-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.result-card {
+    background: var(--eerie-black);
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.result-card img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 10px;
+    margin: 0 auto 10px auto;
+    display: block;
+    box-shadow: 0 0 8px rgba(0,0,0,0.3);
+}
+
+.result-card h3 {
+    font-size: 1.5rem;
+    color: var(--flame);
+    margin: 0 0 10px 0;
+}
+
+.result-card p {
+    font-size: 1rem;
+    color: var(--floral-white);
+    margin: 0;
+}
+
+.back-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background: var(--black-olive);
+    color: var(--floral-white);
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 20px;
+    transition: background 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.back-btn:hover {
+    background: var(--flame);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Error Message */
+.error {
+    color: #ff9187;
+    font-size: 1rem;
+    margin-top: 20px;
+    background-color: rgba(235, 94, 40, 0.2);
+    padding: 10px;
+    border-radius: 8px;
+}
+
+/* About Section */
+.about-section {
+    text-align: center;
+    text-wrap: wrap;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 800px;
+    padding: 20px;
+    background: var(--eerie-black);
+    border-radius: 8px;
+    color: var(--floral-white);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.about-section h2 {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--flame);
+    margin-bottom: 15px;
+}
+
+.about-section p {
+    color: var(--timberwolf);
+    line-height: 1.6;
+}
+
+/* Team Section */
+.team-section {
+    padding: 20px 0;
+}
+
+.team-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    justify-content: center;
+}
+
+.team-card {
+    background: var(--eerie-black);
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.team-card h3 {
+    font-size: 1.1rem;
+    color: var(--floral-white);
+    margin: 0;
+}
+
+.team-card .role {
+    font-size: 0.9rem;
+    color: var(--flame);
+    margin: 5px 0;
+}
+
+.team-card p {
+    font-size: 0.8rem;
+    color: var(--timberwolf);
+    margin: 5px 0;
+}
+
+.edit-btn {
+    padding: 8px 16px;
+    background: var(--black-olive);
+    color: var(--floral-white);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+}
+
+.edit-btn:hover {
+    background: var(--flame);
+    transform: translateY(-1px);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
+}
+
+.edit-input {
+    width: 100%;
+    padding: 8px;
+    margin: 5px 0;
+    background: var(--eerie-black);
+    border: 1px solid var(--black-olive);
+    border-radius: 5px;
+    color: var(--floral-white);
+    font-family: 'Roboto Mono', monospace;
+}
+
+/* Footer */
+.footer {
+    background: var(--black-olive);
+    padding: 15px;
+    text-align: center;
+    color: var(--timberwolf);
+    font-size: 0.9rem;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .navbar {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .nav-links {
+        flex-direction: column;
+        text-align: center;
+    }
+    .hero h1 {
+        font-size: 2rem;
+    }
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+    .custom-file-upload {
+        width: 100%;
+        max-width: 300px;
+        height: 120px;
+    }
+    .custom-file-upload .icon svg {
+        width: 50px;
+        height: 50px;
+    }
+    .custom-file-upload .text span {
+        font-size: 1rem;
+    }
+    .loader svg {
+        width: 120px;
+        height: 120px;
+    }
+    .results-grid {
+        grid-template-columns: 1fr;
+    }
+    .result-card img {
+        max-width: 80%;
+    }
+    .team-list {
+        grid-template-columns: 1fr;
+    }
+}
