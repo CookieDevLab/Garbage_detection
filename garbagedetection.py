@@ -10,8 +10,8 @@ from tensorflow.keras.layers import Conv2D, MaxPooling2D, Flatten, Dense, Dropou
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import classification_report, confusion_matrix
 
-# === Step 1: Set the correct path to extracted images ===
-image_dir = r"C:\Users\USER\OneDrive\文档\garbagedetection99.py\garbagedetection.py\extracted_dataset\Images\Images"
+# === Step 1: Set the correct path to images ===
+image_dir = "Path to dataset/Images/"
 images = []
 labels = []
 
