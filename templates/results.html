@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Results - Garbage Detection</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-brand">Garbage Detection</div>
+        <ul class="nav-links">
+            <li><a href="/">Home</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <header>
+            <h1>Classification Results</h1>
+            <p class="subtitle">Your uploaded images have been analyzed.</p>
+        </header>
+
+        <section class="results-section">
+            {% if results %}
+                <div class="results-grid">
+                    {% for result in results %}
+                        <div class="result-card">
+                            {% if result.image_url %}
+                                <img src="{{ result.image_url }}" alt="Analyzed Image" class="result-image">
+                                <h3 class="{{ 'dirty' if result.label == 'Dirty' else 'clean' }}">{{ result.label }}</h3>
+                                <p>Confidence: {{ result.confidence }}</p>
+                            {% else %}
+                                <h3 class="error-label">{{ result.label }}</h3>
+                                <p class="error-message">{{ result.error }}</p>
+                            {% endif %}
+                        </div>
+                    {% endfor %}
+                </div>
+            {% else %}
+                <p>No results to display.</p>
+            {% endif %}
+            <a href="/tool" class="back-btn">Upload More</a>
+        </section>
+    </div>
+
+    <footer class="footer">
+        <p>© 2025 Garbage Detection</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Garbage Detection</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-brand">Garbage Detection</div>
+        <ul class="nav-links">
+            <li><a href="/">Home</a></li>
+            <li><a href="/about" class="active">About</a></li>
+            <li><a href="/contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <header>
+            <h1>About</h1>
+            <p class="subtitle">A cleaner future through AI.</p>
+        </header>
+
+        <section class="about-section">
+            <p>
+                Litter and waste management are critical challenges faced by both urban and rural areas. 
+                By optimizing the detection process, we aim to help communities and organizations maintain cleanliness and promote sustainability. 
+            </p>
+            <p>
+                At Garbage Detection, our goal is to harness the power of AI to foster healthier and cleaner environments. 
+                Our AI-driven system classifies images into “Clean” or “Dirty,” making it easier for municipalities and environmental organizations to monitor and improve public spaces.
+            </p>
+            <p>
+                Using TensorFlow and Flask, our model analyzes images and categorizes them based on cleanliness. 
+                With support for bulk uploads, users can efficiently process multiple images at once, making large-scale cleanliness assessments quick and seamless.
+            </p>
+            <p>
+                Join us in building a smarter, cleaner future—one image at a time!
+            </p>
+        </section>
+    </div>
+
+    <footer class="footer">
+        <p>© 2025 Garbage Detection</p>
+    </footer>
+</body>
+</html>

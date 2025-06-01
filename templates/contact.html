@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Us</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    /* Color Palette Variables for easy reference (copied from style.css) */
+    :root {
+        --floral-white: #fffcf2;
+        --timberwolf: #ccc5b9;
+        --black-olive: #403d39;
+        --eerie-black: #252422;
+        --flame: #eb5e28;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Roboto Mono', monospace;
+    }
+
+    html, body {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      /* Use eerie-black as base with a subtle gradient */
+      background: linear-gradient(135deg, var(--eerie-black) 0%, #2e2d2aff 100%);
+      color: var(--floral-white); /* Main text color */
+    }
+
+    .navbar {
+      background: var(--black-olive); /* Darker, grounded color for navbar */
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    }
+
+    .nav-brand {
+      font-size: 1.5rem;
+      color: var(--flame); /* Vibrant accent for brand */
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--floral-white);
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links .active {
+      color: var(--flame); /* Vibrant accent on hover/active */
+    }
+
+    .container {
+      flex: 1;
+      max-width: 1000px;
+      margin: auto;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .contact-header h1 {
+      font-size: 2.5rem;
+      color: var(--floral-white); /* Use floral-white for main heading */
+      font-family: 'Montserrat', sans-serif; /* Add Montserrat if you want consistency with other pages */
+    }
+
+    .contact-header p {
+      font-size: 1.2rem;
+      color: var(--timberwolf); /* Softer, slightly muted color for subtitle */
+      margin: 10px auto 30px;
+    }
+
+    .team-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 30px;
+      justify-content: center;
+      margin-top: 40px;
+    }
+
+    .team-card {
+      height: 260px;
+      position: relative;
+      perspective: 1000px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Add shadow for depth */
+      border-radius: 12px; /* Ensure shadow matches card border-radius */
+    }
+
+    .card-content {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      transition: transform 0.6s ease-in-out;
+      transform-style: preserve-3d;
+    }
+
+    .card-front,
+    .card-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      padding: 15px;
+      text-align: center;
+      font-weight: 600;
+      backface-visibility: hidden;
+    }
+
+    .card-front {
+      background: var(--eerie-black); /* Dark background for the front */
+      color: var(--floral-white); /* Light text */
+    }
+
+    .card-front h3 {
+      color: var(--flame); /* Make the name vibrant */
+      opacity: 1;
+      transition: opacity 0.3s ease-in-out;
+    }
+
+    .team-card:hover .card-front h3 {
+      opacity: 0;
+    }
+
+    .card-back {
+      background: var(--black-olive); /* Slightly lighter dark for the back */
+      color: var(--floral-white); /* Light text for details */
+      transform: rotateY(180deg);
+    }
+
+    .card-back p {
+      color: var(--timberwolf); /* Use timberwolf for email/ID for consistency */
+      opacity: 0;
+      transition: opacity 0.3s ease-in-out;
+    }
+
+    .team-card:hover .card-content {
+      transform: rotateY(180deg);
+    }
+
+    .team-card:hover .card-back p {
+      opacity: 1;
+    }
+
+    .footer {
+      background: var(--black-olive); /* Matching navbar background */
+      padding: 15px;
+      text-align: center;
+      color: var(--timberwolf); /* Softer text color for footer */
+      font-size: 0.9rem;
+      margin-top: auto;
+      width: 100%;
+      box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-brand">Garbage Detection</div>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/about">About</a></li>
+      <li><a href="/contact" class="active">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main class="container">
+    <div class="contact-header">
+      <h1>Meet the Team</h1>
+      <p>Get to know the people behind Garbage Detection</p>
+    </div>
+
+    <section class="team-list">
+      <div class="team-card">
+        <div class="card-content">
+          <div class="card-front"><h3>Sanjay Murali</h3></div>
+          <div class="card-back"><p>RA2312701010006</p><p>sm7072@srmist.edu.in</p></div>
+        </div>
+      </div>
+
+      <div class="team-card">
+        <div class="card-content">
+          <div class="card-front"><h3>Adithyan E</h3></div>
+          <div class="card-back"><p>RA2312701010004</p><p>ae5411@srmist.edu.in</p></div>
+        </div>
+      </div>
+
+      <div class="team-card">
+        <div class="card-content">
+          <div class="card-front"><h3>K Athmapriyan</h3></div>
+          <div class="card-back"><p>RA2312701010007</p><p>ak3002@srmist.edu.in</p></div>
+        </div>
+      </div>
+
+      <div class="team-card">
+        <div class="card-content">
+          <div class="card-front"><h3>R Supriya Rao</h3></div>
+          <div class="card-back"><p>RA2312701010027</p><p>sr0916@srmist.edu.in</p></div>
+        </div>
+      </div>
+
+      <div class="team-card">
+        <div class="card-content">
+          <div class="card-front"><h3>Joel Sheno G</h3></div>
+          <div class="card-back"><p>RA2312701010024</p><p>jg6993@srmist.edu.in</p></div>
+        </div>
+      </div>
+
+      <div class="team-card">
+        <div class="card-content">
+          <div class="card-front"><h3>Sriyaraj Kotagond</h3></div>
+          <div class="card-back"><p>RA2312701010026</p><p>sk2685@srmist.edu.in</p></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© 2025 Garbage Detection</p>
+  </footer>
+</body>
+</html>

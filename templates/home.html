@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Garbage Detection</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-brand">Garbage Detection</div>
+        <ul class="nav-links">
+            <li><a href="/" class="active">Home</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="hero">
+        <h1>GARBAGE DETECTION</h1>
+        <p class="hero-subtitle">AI for a Cleaner Tomorrow</p>
+        <a href="/tool" class="cta-btn">Try the Tool</a>
+    </div>
+    <br></br>
+    <br></br>
+    <br></br>
+    <section class="about-section">
+        <h2>About the Tool</h2>
+        <p>Our Garbage Detection tool uses advanced AI technology to classify and analyze the cleanliness of images. Whether it's urban or rural areas, we aim to contribute to a cleaner environment with the help of machine learning.</p>
+        <a href="/tool" class="cta-btn">Start Using the Tool</a>
+    </section>
+    <br></br>
+    <br></br>
+    <br></br>
+    <footer class="footer">
+        <p>© 2025 Garbage Detection</p>
+    </footer>
+
+    <script>
+        // Optional: Add subtle animation to hero text
+        document.addEventListener('DOMContentLoaded', () => {
+            const heroTitle = document.querySelector('.hero h1');
+            heroTitle.style.opacity = 0;
+            heroTitle.style.transform = 'translateY(20px)';
+            setTimeout(() => {
+                heroTitle.style.transition = 'opacity 1s ease, transform 1s ease';
+                heroTitle.style.opacity = 1;
+                heroTitle.style.transform = 'translateY(0)';
+            }, 100);
+        });
+    </script>
+</body>
+</html>
